@@ -5,6 +5,7 @@
 :root {
     --black: #000000;
     --blue: #0065FC;
+    --shade-blue: rgba(0, 101, 252, 0.5);
     --light-blue: #DEEBFF;
     --grey: #f2f2f2;
     --shade-grey: rgba(242, 242, 242, 0.8);
@@ -18,13 +19,13 @@
 body {   
     font-family: 'Raleway', sans-serif;
     color: var(--black);   
-    min-width: 1024px; 
-    max-width: 1440px;
+    min-width: 1025px; 
+    max-width: 1280px;
     margin: 0 auto;
 }
 img {
     max-width: 100%;
-    height: autp;
+    height: auto;
 }
 
 /* Logo + Login link */
@@ -52,12 +53,12 @@ img {
 
 /* Menu */
 nav ul {  
-    width: 15%;  
+    width: 18%;  
     float: right;
     display: flex;
     justify-content: space-between;
     position: absolute;
-    right: 200px;
+    right: 22%;
     top: 36px;   
 } 
 nav ul li a { text-decoration: none; } 
@@ -135,6 +136,7 @@ header p {
     border-radius: 20px;
     margin: 0 25px 10px 0;
 }
+#filters ul li:hover { background-color: var(--shade-blue);}
 #filters  ul li span {
     font-size: 1em;
     padding: 10px;
@@ -144,18 +146,19 @@ header p {
     background-color: var(--light-blue);
     font-size: 1em;
     color: var(--blue);
-    padding: 10px 15px 10px 15px;
-    margin: 0;
+    padding: 10px 16px;
+    margin-left: -2px;
 }
 #filters ul li a {
     text-decoration: none;
     font-weight: bold;
     color: var(--black);
 }
-#filters ul li a:hover {
-    color: var(--blue);
-    font-weight: bold;
+#filters ul li a:hover span:first-child { 
+    background-color: var(--blue);
+    color: var(--white);
 }
+
 
 /* Info text */
 #info {
@@ -251,7 +254,7 @@ header p {
 /* Aside > RightCol */
 #rightCol {    
     float: left;
-    width: 28%;
+    width: 29%;
     margin-left: 35px;
     padding: 0 35px;    
     border-radius: 20px;
@@ -406,29 +409,33 @@ header p {
 }
 
 /* DESKTOP SPE  */
-@media screen and (max-width: 1440px) {
-    #topHeader {        
-        position: relative;
+@media screen and (min-width: 1025px) {
+    #topHeader { position: relative; }
+    
+    @supports (-moz-appearance:none) {
+        nav ul {  
+            width: 20%;  
+            right: 160px;
+        } 
+        #blocRight ul { height: 440px;}         
     }
 }
 
-/* TABLETTE  */
-@media screen and (min-width: 728px) and (max-width: 1024px) {
-  
+/* TABLETTE Landscape */
+
+@media (min-width: 768px) and (max-width: 1024px) {  
     nav ul {  
         width: 25%;  
         right: 150px;   
     } 
-
     #topContent {
         display: flex;
         flex-direction: column-reverse;
     }
-
-        #leftCol { 
-            max-width: 95%; 
-            margin-top: 30px;
-        }
+    #leftCol { 
+        max-width: 95%; 
+        margin-top: 30px;
+    }
     #leftCol ul li { margin: 0 25px 25px 0; }    
     #rightCol { 
         margin: 10px 0 20px 20px;
@@ -450,22 +457,27 @@ header p {
         margin-right: 0;
         padding-right: 10px;
     }
-    #rightCol ul li img {
-        width: 40%;
-    }
-
-    #contAct {
-        column-gap: 30px;
-    }
-    #blocLeft ul, #blocRight ul {
-        column-gap: 30px;
-    }    
-    #blocRight ul li:nth-child(1) img { height: 364px; }   
+    #rightCol ul li img { width: 40%; }
+    #contAct { column-gap: 15px; }
+    #blocLeft ul, #blocRight ul { column-gap: 15px; }    
+    #blocLeft ul li span, #blocRight ul li span { font-size: 0.95rem;}  
+    #blocRight ul li:nth-child(1) img { height: 378px;}      
     #blocRight ul li:nth-child(3) img { height: 150px; }
-    
+
+    @supports (-moz-appearance:none) {
+        nav ul {  
+            width: 25%;  
+            right: 20%;
+        } 
+        #topHeader span {
+            padding-right: 25%;
+        }
+        #blocRight ul { height: 440px;} 
+    }    
 }
 
-@media screen and (max-width:428px){
+/* SMARTPHONE */
+@media (min-width: 320px) and (max-width: 480px) {
     body {
         min-width: 375px;
         max-width: 428px;
@@ -500,7 +512,7 @@ header p {
         padding: 50px 10px 0 20px;
         font-weight: bold;
     } 
-    #ztext input { width: 260px;}
+    #ztext input { width: 230px;}
     #btText { display: none; }
     #btIco { display: block; }
     #btnSearch button{    
@@ -517,7 +529,7 @@ header p {
         flex-wrap: wrap;
         align-items: flex-start;
     } 
-    #filters ul li { margin: 0 20px 30px 0; }    
+    #filters ul li { margin: 0 0 30px 0; }    
     #info span {
         float: left;
         margin-right: 20px;
@@ -568,7 +580,7 @@ header p {
         margin: 25px 20px;
         display: flex;
         flex-direction: column;
-        align-items: space-around;
+        justify-content: space-around;
     }
     #mainFooter h3 { margin-top: 20px;}
 
