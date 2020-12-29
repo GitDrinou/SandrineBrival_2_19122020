@@ -422,19 +422,19 @@ header p {
 }
 
 /* TABLETTE Landscape */
-
 @media (min-width: 768px) and (max-width: 1024px) {  
     nav ul {  
         width: 25%;  
-        right: 150px;   
+        right: 20%; 
     } 
+    #topHeader,  #blocAct { margin: 0 20px 0 0; } 
     #topContent {
         display: flex;
         flex-direction: column-reverse;
     }
     #leftCol { 
         max-width: 95%; 
-        margin-top: 30px;
+        margin-top: 30px;      
     }
     #leftCol ul li { margin: 0 25px 25px 0; }    
     #rightCol { 
@@ -451,13 +451,18 @@ header p {
     }
     #rightCol ul li {
         margin-right: 20px;
-        padding-right: 10px;
+        padding: 5px 5px 15px 5px;
     }
-    #rightCol ul li:nth-child(3) {
-        margin-right: 0;
-        padding-right: 10px;
+    #rightCol ul li:nth-child(3) { margin-right: 0; }
+    #rightCol ul li img { 
+        width: 100%;        
+        border-radius: 20px 20px 0 0;
+        padding-bottom: 10px;
     }
-    #rightCol ul li img { width: 40%; }
+    #rightCol ul li a .accomName{ padding: 0 10px;}
+    #rightCol ul li a .amount { padding-left: 10px;}
+    #rightCol ul li a .stars { padding: 20px 0 0 10px; }    
+    #rightCol ul li:nth-child(1) a .stars, #rightCol ul li:nth-child(3) a .stars { padding: 35px 0 0 10px; }
     #contAct { column-gap: 15px; }
     #blocLeft ul, #blocRight ul { column-gap: 15px; }    
     #blocLeft ul li span, #blocRight ul li span { font-size: 0.95rem;}  
@@ -466,18 +471,61 @@ header p {
 
     @supports (-moz-appearance:none) {
         nav ul {  
-            width: 25%;  
+            width: 23%;  
+            right: 17%;
+        } 
+        #topHeader { margin: 0 20px 0 0; }
+        #rightCol h2 { width: 100%; }
+        #blocRight ul { height: 440px;} 
+        #rightCol ul li:nth-child(2) a .stars { padding: 37px 0 0 10px; }
+
+    }    
+}
+
+/* TABLETS ¨Portrait */
+@media (orientation: portrait) and (min-width:768px) {
+    nav ul { 
+        width: 32%;
+        right: -55px;
+    }    
+    #topHeader,  #blocAct { margin: 0 20px 0 0; } 
+    #rightCol,#leftCol { padding:20px;}
+    #rightCol h2 { width: 100%; margin-top: 5px;}
+    #rightCol ul li { padding: 5px 5px 15px 5px; }
+    #rightCol ul li img,  #leftCol ul li img { 
+        width: 100%; 
+        border-radius: 20px 20px 0 0;
+        padding-bottom: 10px;
+    }
+    #rightCol ul li a .accomName{ padding: 0 10px;}
+    #rightCol ul li a .amount { padding-left: 10px;}
+    #rightCol ul li a .stars { padding: 20px 0 0 10px; }
+    #rightCol ul li:nth-child(1) a .stars { padding: 35px 0 0 10px; }
+    #leftCol ul li { margin: 0 20px 20px 0;}
+    #blocAct {width: 98%;}
+    #contAct { columns: 1; }
+    #mainFooter { width: 98%;}
+
+    @supports (-moz-appearance:none) {
+        nav ul {  
+            width: 32%;  
             right: 20%;
         } 
-        #topHeader span {
-            padding-right: 25%;
+        #filters p { 
+            width: 100%;
+            margin: 0 20px 0 0;
+            padding-bottom:0;
         }
-        #blocRight ul { height: 440px;} 
+        #filters ul { margin-bottom: 10px; }
+        #filters ul li { margin-right: 10px; }
+        #topContent { max-width: 75%; }
+        #blocAct {width: 75%;}        
+        #mainFooter { width: 75%;}
     }    
 }
 
 /* SMARTPHONE */
-@media (min-width: 320px) and (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 667px) {
     body {
         min-width: 375px;
         max-width: 428px;
@@ -583,7 +631,87 @@ header p {
         justify-content: space-around;
     }
     #mainFooter h3 { margin-top: 20px;}
+}
 
+/* SMARTPHONE Landscape*/
+@media  (orientation: landscape) and (min-width:375px) {
+    nav ul {
+        width: 35%;
+        right: -185px;
+    }
+    #topHeader { margin: 0 20px 0 0;}
+    #topContent { 
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    #rightCol { 
+        width: 95%;
+        margin: 0 20px 20px 20px;
+    }
+    #rightCol h2, #lefrCol h2 { 
+        width: 100%; 
+        margin-top: 5px;
+        padding-top: 10px;
+    }
+    #rightCol ul {
+        display: flex;
+        flex-direction: row;
+    }
+    #rightCol ul li { padding: 5px 5px 15px 5px; }
+    #rightCol ul li img,  #leftCol ul li img { 
+        width: 100%; 
+        border-radius: 20px 20px 0 0;
+        padding-bottom: 10px;
+    }
+    #rightCol ul li a .accomName{ padding: 0 10px;}
+    #rightCol ul li a .amount { padding-left: 10px;}
+    #rightCol ul li a .stars { padding: 20px 0 0 10px; }
+    #rightCol ul li:nth-child(1) a .stars,#rightCol ul li:nth-child(3) a .stars { padding: 35px 0 0 10px; }
+    #leftCol { max-width:95%;}
+    #leftCol ul li {width: 30%}
+    #contAct { columns: 1; 
+        padding: 0 20px;
+    }
+    #blocLeft {margin-bottom: 30px;}
 
+    @supports (-moz-appearance:none) {
+        nav ul {  
+            width: 32%;  
+            right: 20%;
+        } 
+        #topHeader {
+            width: 63%;
+            margin: 0 20px 0 0;}
+        #filters p { 
+            width: 63%;
+            margin: 0 20px 0 0;
+            padding-bottom:0;
+        }
+        #filters ul { 
+            width: 65%;
+            clear: left;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 10px; }
+        #filters ul li { margin-right: 10px; }
+        #topContent { 
+            margin: 0 20px; 
+            padding-right: 10px;
+            max-width: 60%; 
+        }
+        #rightCol, #leftCol { padding: 10px; }
+        #rightCol ul li{ margin: 5px; }
+        #rightCol ul li:nth-child(2) a .stars { padding: 35px 0 0 10px;}
+        #leftCol ul li { 
+            width: 45%;
+            margin: 10px;
+        }
+       #blocAct {width: 65%;}        
+        #mainFooter { 
+        width: 65%;
+        font-size: 0.8rem;
+        }
+        #mainFooter section { width: 40%;}
+    }    
 }
 
