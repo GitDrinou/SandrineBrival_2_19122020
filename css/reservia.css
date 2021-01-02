@@ -1,7 +1,7 @@
-/* Import Police Raleway Google Fonts */
+/* Import Font Raleway w/ Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
-/* Création de variables contenant des Custom Properties */
+/* Custom Properties = global variables */
 :root {
     --black: #000000;
     --blue: #0065FC;
@@ -13,11 +13,14 @@
     box-sizing: border-box;
 }
 
-/* tous les éléments hérite de ces propriétés */
-* { box-sizing: inherit; } 
+/* For all elements */
+* { 
+    box-sizing: inherit; 
+} 
 
+/* DESKTOP Formatting */
 body {   
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', Arial, Verdana, sans-serif;
     color: var(--black);   
     min-width: 1025px; 
     max-width: 1440px;
@@ -28,9 +31,8 @@ img {
     height: auto;
 }
 
-/* Logo + Login link */
+/* Logo + Subscription link */
 #topHeader {
-    max-width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -61,7 +63,9 @@ nav ul {
     right: 15%;
     top: 36px;   
 } 
-nav ul li a { text-decoration: none; } 
+nav ul li a { 
+    text-decoration: none; 
+} 
 nav ul li a:hover {
     color: var(--blue);
     font-weight: bold;
@@ -81,8 +85,10 @@ header p {
     padding: 10px 20px;
 }
 
-/* Search */
-#search { padding: 10px 20px 0 20px; }
+/* Search section */
+#search { 
+    padding: 10px 20px 0 20px; 
+}
 #icoSearch {
     padding: 15px 20px 0 20px;  
     height: 50px;
@@ -111,11 +117,17 @@ header p {
     font-weight: bold;
     border: none;
 }
-#btText { display: block; }
-#btIco { display: none; }
+#btText { 
+    display: block; 
+}
+#btIco { 
+    display: none; 
+}
 
-/* Filters */
-#filters { margin-top: 30px; }
+/* Filters section */
+#filters { 
+    margin-top: 30px; 
+}
 #filters p {  
     font-size: 1em;  
     font-weight: bold;
@@ -136,7 +148,9 @@ header p {
     border-radius: 20px;
     margin: 0 25px 10px 0;
 }
-#filters ul li:hover { background-color: var(--shade-blue);}
+#filters ul li:hover { 
+    background-color: var(--shade-blue);
+}
 #filters  ul li span {
     font-size: 1em;
     padding: 10px;
@@ -159,8 +173,7 @@ header p {
     color: var(--white);
 }
 
-
-/* Info text */
+/* Text "Info" */
 #info {
     margin-top: 0;
     padding: 0 0 20px 20px;
@@ -175,7 +188,12 @@ header p {
     margin-right: 5px;
 }
 
-#mainContent { height: max-content; }
+/* Content section : Accomodation + Activities */
+#mainContent { 
+    height: max-content; 
+}
+
+/* Global Classes */
 .amount {
     font-size: 0.8em;
     color: var(--black);    
@@ -188,7 +206,7 @@ header p {
     color: var(--light-blue);
 }
 
-/* Main > LeftCol */
+/* Content section : Accomodations */
 #leftCol {
     float: left;
     max-width: 65%;
@@ -223,7 +241,9 @@ header p {
     object-fit: cover;
     margin: 0;
 }
-#leftCol ul li a, #rightCol ul li a { text-decoration: none; }
+#leftCol ul li a, #rightCol ul li a, #leftCol p a { 
+    text-decoration: none; 
+}
 #leftCol ul li a .accomName {
     font-size: 1rem;
     font-weight: bold;
@@ -249,9 +269,8 @@ header p {
     font-weight: bold;
     padding: 0 0 20px 20px; 
 }
-#leftCol p a { text-decoration: none;}
 
-/* Aside > RightCol */
+/* Content section : Most popular accomodations */
 #rightCol {    
     float: left;
     width: 29%;
@@ -308,8 +327,10 @@ header p {
     padding-top: 35px;  
 }
 
-/*  Section > Activities */
-#blocAct { clear: left; }
+/* Content section : Activities */
+#blocAct { 
+    clear: left; 
+}
 #blocAct h2 {     
     font-size: 1.1rem;
     font-weight: bold;
@@ -323,7 +344,9 @@ header p {
     columns: 2;
     column-gap: 40px;
 }
-#blocLeft, #blocRight { width: 100%; }
+#blocLeft, #blocRight { 
+    width: 100%; 
+}
 #blocLeft ul, #blocRight ul {
     display: flex;
     flex-direction: column;
@@ -331,8 +354,12 @@ header p {
     width: 100%;
     height: 420px;
 }
-#blocLeft ul li, #blocRight ul li { width: 47%; }
-#blocLeft ul li:nth-child(1), #blocRight ul li:nth-child(1) { margin-right: 30px;}
+#blocLeft ul li, #blocRight ul li { 
+    width: 47%; 
+}
+#blocLeft ul li:nth-child(1), #blocRight ul li:nth-child(1) { 
+    margin-right: 30px;
+}
 #blocLeft ul li a, #blocRight ul li a {  
     text-decoration: none;
     font-size: 1rem;
@@ -364,37 +391,25 @@ header p {
     display: block;
     margin-top: 50px;
 }
-#blocLeft ul li:nth-child(1) a figure img, #blocRight ul li:nth-child(1) a figure img {
+#blocLeft ul li a figure img, #blocRight ul li a figure img {
     border-radius: 20px 20px 0 0;
-    width: 100%;    
-    height: 375px;
-    object-fit: cover;
+    width: 100%;
+    object-fit: cover; 
+}
+#blocLeft ul li:nth-child(1) a figure img, #blocRight ul li:nth-child(1) a figure img {       
+    height: 375px; 
 }
 #blocLeft ul li:nth-child(2) a figure img {
-    border-radius: 20px 20px 0 0;
-    width: 100%;    
     height: 150px;
-    object-fit: cover; 
-   /* margin-top: -20px; */
 }
 #blocLeft ul li:nth-child(3) a figure img {
-    border-radius: 20px 20px 0 0;
-    width: 100%;    
-    height: 110px;
-    object-fit: cover; 
+   height: 110px;
 }
 #blocRight ul li:nth-child(2) a figure img {
-    border-radius: 20px 20px 0 0;
-    width: 100%;    
     height: 140px;
-    object-fit: cover; 
-   /* margin-top: -20px; */
 }
 #blocRight ul li:nth-child(3) a figure img {
-    border-radius: 20px 20px 0 0;
-    width: 100%;    
     height: 152px;
-    object-fit: cover; 
 }
 #blocLeft ul li figure figcaption, #blocRight ul li figure figcaption {
     margin-top: -2px;
@@ -405,7 +420,7 @@ header p {
 }
 
 
-/* Footer */
+/* Footer section */
 #mainFooter {
     margin: 60px 0 30px 0;
     display: flex;
@@ -413,7 +428,9 @@ header p {
     padding: 20px;
     background-color: var(--grey);
 }
-#mainFooter section { width: 100%; }
+#mainFooter section { 
+    width: 100%; 
+}
 #mainFooter section h3  {
     font-weight: bold;
     font-size: 1rem;
@@ -429,13 +446,15 @@ header p {
 }
 
 
-/* TABLETTE Landscape */
-@media (min-width: 768px) and (max-width: 1024px) {  
+/* TABLETS Landscape */
+@media (orientation:landscape) and (min-width: 768px) and (max-width: 1024px) {  
     nav ul {  
         width: 25%;  
         right: 20%; 
     } 
-    #topHeader,  #blocAct { margin: 0 20px 0 0; } 
+    #topHeader,  #blocAct { 
+        margin: 0 20px 0 0; 
+    } 
     #topContent {
         display: flex;
         flex-direction: column-reverse;
@@ -444,7 +463,9 @@ header p {
         max-width: 95%; 
         margin-top: 30px;      
     }
-    #leftCol ul li { margin: 0 25px 25px 0; }    
+    #leftCol ul li { 
+        margin: 0 25px 25px 0; 
+    }    
     #rightCol { 
         margin: 10px 0 20px 20px;
         width: 95%;
@@ -461,82 +482,183 @@ header p {
         margin-right: 20px;
         padding: 5px 5px 15px 5px;
     }
-    #rightCol ul li:nth-child(3) { margin-right: 0; }
+    #rightCol ul li:nth-child(3) { 
+        margin-right: 0; 
+    }
     #rightCol ul li img { 
         width: 100%;        
         border-radius: 20px 20px 0 0;
         padding-bottom: 10px;
     }
-    #rightCol ul li a .accomName{ padding: 0 10px;}
-    #rightCol ul li a .amount { padding-left: 10px;}
-    #rightCol ul li a .stars { padding: 20px 0 0 10px; }    
-    #rightCol ul li:nth-child(1) a .stars, #rightCol ul li:nth-child(3) a .stars { padding: 35px 0 0 10px; }
-    #contAct { column-gap: 15px; }
-    #blocLeft ul, #blocRight ul { column-gap: 15px; }    
-    #blocLeft ul li span, #blocRight ul li span { font-size: 0.95rem;}  
-    #blocRight ul li:nth-child(1) img { height: 378px;}      
-    #blocRight ul li:nth-child(3) img { height: 150px; }
+    #rightCol ul li a .accomName { 
+        padding: 0 10px;
+    }
+    #rightCol ul li a .amount { 
+        padding-left: 10px;
+    }
+    #rightCol ul li a .stars { 
+        padding: 20px 0 0 10px; 
+    }    
+    #rightCol ul li:nth-child(1) a .stars, #rightCol ul li:nth-child(3) a .stars { 
+        padding: 35px 0 0 10px; 
+    }
+    #contAct { 
+        column-gap: 10px; 
+        column-count: 1; 
+    }   
+    #blocLeft ul li a figure figcaption, #blocRight ul li a figure figcaption { 
+        font-size: 0.95rem;
+    }  
+    #blocRight ul li:nth-child(1) img { 
+        height: 378px;
+    }      
+    #blocRight ul li:nth-child(3) img { 
+        height: 150px; 
+    }
 
+    /* Mozilla Firefox specifications */
     @supports (-moz-appearance:none) {
         nav ul {  
             width: 23%;  
             right: 17%;
         } 
-        #topHeader { margin: 0 20px 0 0; }
-        #rightCol h2 { width: 100%; }
-        #blocRight ul { height: 440px;} 
-        #rightCol ul li:nth-child(2) a .stars { padding: 37px 0 0 10px; }
-
+        #topHeader { 
+            width: 1024px;
+            margin: 0 20px 0 0;}
+        #rightCol h2 { 
+            width: 100%; 
+        }
+        #rightCol ul { 
+            width: 100%;
+        }
+        #rightCol ul li:nth-child(2) a .stars { 
+            padding: 37px 0 0 10px; 
+        }
+        #blocLeft { 
+            margin-bottom: 42px;
+        }
+        #blocLeft ul li:nth-child(3) a figure { 
+            margin-top: 80px;
+        }
+        #blocRight ul li:nth-child(3) a figure { 
+            margin-top: 45px;
+        }
     }    
 }
 
-/* TABLETS ¨Portrait */
+/* TABLETS Portrait */
 @media (orientation: portrait) and (min-width:768px) and (max-width: 1024px) {
     nav ul { 
-        width: 32%;
-        right: -55px;
+        width: 30%;
+        right: 25%;
     }    
-    #topHeader,  #blocAct { margin: 0 20px 0 0; } 
-    #rightCol,#leftCol { padding:20px;}
-    #rightCol h2 { width: 100%; margin-top: 5px;}
-    #rightCol ul li { padding: 5px 5px 15px 5px; }
+    #topHeader { 
+        width:768px ;
+        margin: 0 20px 0 0;
+    } 
+    #filters p { 
+        width:90%;
+        margin: 0 20px 0 0;
+        padding-bottom:0;
+    }
+    #filters ul {
+        margin-bottom: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        width:95%;         
+    }
+    #filters ul li { 
+        margin-right: 10px; 
+    }
+    #topContent { 
+        display: flex;
+        flex-direction: column-reverse;
+        max-width: 90%;
+    }
+    #rightCol { 
+        width: 728px;
+        padding:10px;
+        margin: 0 20px;
+    }
+    #rightCol h2 { 
+        width: 95%; 
+        margin-top: 5px;
+    }    
+    #rightCol ul {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin:  0 10px;
+    }
+    #rightCol ul li { 
+        padding: 5px 5px 15px 5px; 
+    }
     #rightCol ul li img,  #leftCol ul li img { 
         width: 100%; 
         border-radius: 20px 20px 0 0;
         padding-bottom: 10px;
     }
-    #rightCol ul li a .accomName{ padding: 0 10px;}
-    #rightCol ul li a .amount { padding-left: 10px;}
-    #rightCol ul li a .stars { padding: 20px 0 0 10px; }
-    #rightCol ul li:nth-child(1) a .stars { padding: 35px 0 0 10px; }
-    #leftCol ul li { margin: 0 20px 20px 0;}
-    #blocAct {width: 98%;}
-    #contAct { columns: 1; }
-    #mainFooter { width: 98%;}
+    #rightCol ul li a .accomName { 
+        padding: 0 10px;
+    }
+    #rightCol ul li a .amount { 
+        padding-left: 10px;
+    }
+    #rightCol ul li a .stars { 
+        padding: 20px 0 0 10px; 
+    }
+    #rightCol ul li:nth-child(1) a .stars { 
+        padding: 35px 0 0 10px; 
+    }    
+    #leftCol {        
+        max-width: 728px;
+        padding:10px;
+        margin-top: 20px; 
+    }
+    #leftCol ul li {
+        margin: 0 10px 20px 10px;
+    }
+    #blocAct {     
+        margin: 0 10px;
+        max-width: 748px;
+    }
+    #contAct { 
+        columns: 1; 
+    }
+    #mainFooter { 
+        width: 98%;
+    }
 
+    /* Mozilla Firefox specifications */
     @supports (-moz-appearance:none) {
         nav ul {  
             width: 32%;  
             right: 20%;
         } 
-        #filters p { 
-            width: 100%;
+        #topHeader { 
+            width: 768px;
             margin: 0 20px 0 0;
-            padding-bottom:0;
+        }  
+        #rightCol ul li:nth-child(2) a .stars, #rightCol ul li:nth-child(3) a .stars {
+            margin-top: 10px;
         }
-        #filters ul { margin-bottom: 10px; }
-        #filters ul li { margin-right: 10px; }
-        #topContent { max-width: 75%; }
-        #blocAct {width: 75%;}        
-        #mainFooter { width: 75%;}
+        #leftCol h2 { 
+            margin-top: 10px;
+        }         
+        #blocRight {
+            margin-top: 20px;
+        }      
+        #mainFooter { 
+            width: 90%;
+        }
     }    
 }
 
 /* SMARTPHONE  Portrait */
-@media (min-width: 320px) and (max-width: 667px) {
+@media (orientation:portrait) and (min-width: 320px) and (max-width: 667px) {
     body {
         min-width: 375px;
-        max-width: 428px;
+        max-width: 667px;
     }
     nav ul {
         position: static;
@@ -568,9 +690,15 @@ header p {
         padding: 50px 10px 0 20px;
         font-weight: bold;
     } 
-    #ztext input { width: 230px;}
-    #btText { display: none; }
-    #btIco { display: block; }
+    #ztext input { 
+        width: 230px;
+    }
+    #btText { 
+        display: none; 
+    }
+    #btIco { 
+        display: block; 
+    }
     #btnSearch button{    
         height: 50px;
         width: 50px;
@@ -585,7 +713,9 @@ header p {
         flex-wrap: wrap;
         align-items: flex-start;
     } 
-    #filters ul li { margin: 0 0 30px 0; }    
+    #filters ul li { 
+        margin: 0 0 30px 0; 
+    }    
     #info span {
         float: left;
         margin-right: 20px;
@@ -612,118 +742,158 @@ header p {
         margin: 0 0 20px 0;
         padding: 0 10px 0 0;
     }
-    #rightCol ul li img { width: 50%;}
+    #rightCol ul li img { 
+        width: 50%;
+    }
     #leftCol ul li {
         width: 99%;
         margin: 0 0 20px 0;
         padding: 0 0 10px 0;
     }    
     #contAct {
-        columns: 1;
-        column-gap: 0;;
+       columns: 1;
     }    
+    #blocLeft, #blocRight { 
+        margin-bottom: 230px;
+    }
     #blocLeft ul, #blocRight ul {
-        columns: 1;
-        column-gap: 0;
-    }    
-    #blocLeft ul li:nth-child(1) img, #blocLeft ul li:nth-child(3) img, #blocRight ul li:nth-child(1) img, #blocRight ul li:nth-child(2) img, #blocRight ul li:nth-child(3) img  { height: 135px; }
-    #blocLeft ul li:nth-child(2) img { height: 150px; }
-    #blocLeft ul li:nth-child(2) img { height: 150px; }
-    #blocRight ul li:nth-child(3) img { margin-top: 0; }
-    #blocLeft ul li, #blocRight ul li { margin-bottom: 35px}    
+        display: flex;
+        flex-direction: row;
+    }      
+    #blocLeft ul li, #blocRight ul li { 
+        width: 100%; 
+    }
+    #blocLeft ul li:nth-child(1), #blocRight ul li:nth-child(1) { 
+        margin-right: 0;
+    } 
+    #blocLeft ul li:nth-child(1) a figure img, #blocLeft ul li:nth-child(3) a figure img, #blocRight ul li:nth-child(1) a figure img, #blocRight ul li:nth-child(2) a figure img, #blocRight ul li:nth-child(3) a figure img  { 
+        height: 135px; 
+    }
+    #blocLeft ul li:nth-child(2) a figure img { 
+        height: 150px; 
+    }
+    #blocLeft ul li:nth-child(3) a figure { 
+        margin-top: 0;
+    }
+    #blocRight ul li:nth-child(3) a figure { 
+        margin-top: 0; 
+    }
+    #blocLeft ul li, #blocRight ul li { 
+        margin-bottom: 35px;
+    } 
     #mainFooter { 
         margin: 25px 20px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
     }
-    #mainFooter h3 { margin-top: 20px;}
+    #mainFooter h3 { 
+        margin-top: 20px;
+    }
 }
 
-/* SMARTPHONE Landscape*/
-@media (orientation: landscape) and (min-width: 320px) and (max-width: 668px) {
+/* SMARTPHONE Landscape */
+@media (orientation: landscape) and (min-width: 320px) and (max-width: 667px) {
+    body {
+        min-width: 320px;
+        max-width: 668px;
+        padding: 0 10px;
+        margin: 0 auto;
+    }
     nav ul {
         width: 35%;
-        right: -185px;
+        right: 25%;
     }
-    #topHeader { margin: 0 20px 0 0;}
-    #topContent { 
+    #topHeader { 
+        margin: 0 20px 0 0;
+    }
+    #filters p {
+        width: 100%;
+    }
+    #filters ul {
+        clear: left;
+        margin: 0 20px;
+        padding-top: 5px;
+        display: flex;
+        flex-wrap: wrap;
+    } 
+    #filters ul li { 
+        margin: 0 0 30px 0; 
+    } 
+    #topContent {
         display: flex;
         flex-direction: column-reverse;
-    }
-    #rightCol { 
+    }   
+    #rightCol {
         width: 95%;
-        margin: 0 20px 20px 20px;
+        margin: 0 10px;
     }
-    #rightCol h2, #lefrCol h2 { 
-        width: 100%; 
-        margin-top: 5px;
-        padding-top: 10px;
+    #rightCol ul li img, #leftCol ul li img {
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+        padding: 10px;
     }
-    #rightCol ul {
+    #rightCol ul li a span {
+        padding: 0 30px;
+    }
+    #rightCol ul li a .stars {
+        margin: 10px 0;
+    }
+    #leftCol {
+        max-width: 100%;        
+        margin: 20px 10px;
+    }
+    #leftCol ul li {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    #blocAct {
+        max-width: 100%;
+    }
+    #contAct {
+        columns: 1;
+    }   
+    #blocLeft, #blocRight { 
+        margin-bottom: 220px;
+    }
+    #blocLeft ul, #blocRight ul {
         display: flex;
         flex-direction: row;
-    }
-    #rightCol ul li { padding: 5px 5px 15px 5px; }
-    #rightCol ul li img,  #leftCol ul li img { 
+    }      
+    #blocLeft ul li, #blocRight ul li { 
         width: 100%; 
-        border-radius: 20px 20px 0 0;
-        padding-bottom: 10px;
     }
-    #rightCol ul li a .accomName{ padding: 0 10px;}
-    #rightCol ul li a .amount { padding-left: 10px;}
-    #rightCol ul li a .stars { padding: 20px 0 0 10px; }
-    #rightCol ul li:nth-child(1) a .stars,#rightCol ul li:nth-child(3) a .stars { padding: 35px 0 0 10px; }
-    #leftCol { max-width:95%;}
-    #leftCol ul li {width: 30%}
-    #contAct { columns: 1; 
-        padding: 0 20px;
+    #blocLeft ul li:nth-child(1), #blocRight ul li:nth-child(1) { 
+        margin-right: 0;
+    } 
+    #blocLeft ul li a figure img, #blocRight ul li a figure img {
+        width: 100%;
+        object-fit: cover;
     }
-    #blocLeft {margin-bottom: 30px;}
+    #blocLeft ul li:nth-child(1) a figure img, #blocLeft ul li:nth-child(3) a figure img, #blocRight ul li:nth-child(1) a figure img, #blocRight ul li:nth-child(2) a figure img, #blocRight ul li:nth-child(3) a figure img  { 
+        height: 135px; 
+    }
+    #blocLeft ul li:nth-child(2) a figure img { 
+        height: 150px; 
+    }
+    #blocLeft ul li:nth-child(3) a figure { 
+        margin-top: 0;
+    }
+    #blocRight ul li:nth-child(3) a figure { 
+        margin-top: 0; 
+    }
+    #blocLeft ul li, #blocRight ul li { 
+        margin-bottom: 35px;
+    } 
+    #mainFooter {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    #mainFooter section {
+        margin-top: 20px;
+    }
 
-    @supports (-moz-appearance:none) {
-        body {
-             width: 667px;
-             margin: 0 auto;
-        }
-        nav ul {  
-            width: 30%;  
-            right: 20%;
-        } 
-        #topHeader {
-            width: 65%;
-            margin: 0 20px 0 0;
-        }
-        #filters p { 
-            width: 65%;
-            margin: 0 20px 0 0;
-            padding-bottom:0;
-        }
-        #filters ul { 
-            width: 65%;
-            clear: left;
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 10px; }
-        #filters ul li { margin-right: 10px; }
-        #topContent { 
-            margin: 0 20px; 
-            padding-right: 10px;
-            max-width: 65%; 
-        }
-        #rightCol, #leftCol { padding: 10px; }
-        #rightCol ul li{ margin: 5px; }
-        #rightCol ul li:nth-child(2) a .stars { padding: 35px 0 0 10px;}
-        #leftCol ul li { 
-            width: 45%;
-            margin: 10px;
-        }
-       #blocAct {width: 65%;}        
-        #mainFooter { 
-        width: 65%;
-        font-size: 0.8rem;
-        }
-        #mainFooter section { width: 40%;}
-    }    
+   
 }
-
