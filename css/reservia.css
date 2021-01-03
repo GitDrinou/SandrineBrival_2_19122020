@@ -22,9 +22,8 @@
 body {   
     font-family: 'Raleway', Arial, Verdana, sans-serif;
     color: var(--black);   
-    min-width: 1025px; 
-    max-width: 1440px;
     margin: 0 auto;
+    max-width: 1440px;
 }
 img {
     max-width: 100%;
@@ -76,12 +75,12 @@ nav ul li:first-child a {
 }
 
 /* Main title */
-header h1 {
+#generalContent h1 {
     font-size: 1.3rem;
     padding: 20px 10px 0 20px;
     font-weight: bold;
 }
-header p {
+#generalContent p {
     padding: 10px 20px;
 }
 
@@ -274,8 +273,8 @@ header p {
 #rightCol {    
     float: left;
     width: 29%;
-    margin-left: 35px;
-    padding: 0 35px;    
+    margin-left: 40px;
+    padding: 0 40px;    
     border-radius: 20px;
     background-color: var(--grey);
 }
@@ -447,7 +446,7 @@ header p {
 
 
 /* TABLETS Landscape */
-@media (orientation:landscape) and (min-width: 768px) and (max-width: 1024px) {  
+@media (orientation:landscape) and (min-width: 668px) and (max-width: 1024px) {  
     nav ul {  
         width: 25%;  
         right: 20%; 
@@ -460,27 +459,26 @@ header p {
         flex-direction: column-reverse;
     }
     #leftCol { 
-        max-width: 95%; 
-        margin-top: 30px;      
+        max-width: 100%; 
+        margin-top: 30px;   
     }
     #leftCol ul li { 
         margin: 0 25px 25px 0; 
     }    
     #rightCol { 
         margin: 10px 0 20px 20px;
-        width: 95%;
+        width: 96%; 
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;;
+        flex-wrap: wrap; 
     }
     #rightCol ul {
         margin: 0;
         display: flex;
-        flex-direction: row;    
+        flex-direction: row;   
     }
     #rightCol ul li {
-        margin-right: 20px;
-        padding: 5px 5px 15px 5px;
+        margin: 0 25px 25px 0; 
     }
     #rightCol ul li:nth-child(3) { 
         margin-right: 0; 
@@ -504,7 +502,7 @@ header p {
     }
     #contAct { 
         column-gap: 10px; 
-        column-count: 1; 
+        column-count: 1;  
     }   
     #blocLeft ul li a figure figcaption, #blocRight ul li a figure figcaption { 
         font-size: 0.95rem;
@@ -523,8 +521,9 @@ header p {
             right: 17%;
         } 
         #topHeader { 
-            width: 1024px;
-            margin: 0 20px 0 0;}
+            width: 100%;
+            margin: 0 20px 0 0;
+        }
         #rightCol h2 { 
             width: 100%; 
         }
@@ -547,17 +546,17 @@ header p {
 }
 
 /* TABLETS Portrait */
-@media (orientation: portrait) and (min-width:768px) and (max-width: 1024px) {
+@media (orientation: portrait) and (min-width:668px) and (max-width: 1024px) {
     nav ul { 
         width: 30%;
         right: 25%;
     }    
     #topHeader { 
-        width:768px ;
-        margin: 0 20px 0 0;
+        width:100%;
+        padding-right: 20px;
     } 
     #filters p { 
-        width:90%;
+        width:100%;
         margin: 0 20px 0 0;
         padding-bottom:0;
     }
@@ -565,7 +564,6 @@ header p {
         margin-bottom: 10px;
         display: flex;
         flex-wrap: wrap;
-        width:95%;         
     }
     #filters ul li { 
         margin-right: 10px; 
@@ -573,25 +571,28 @@ header p {
     #topContent { 
         display: flex;
         flex-direction: column-reverse;
-        max-width: 90%;
     }
-    #rightCol { 
-        width: 728px;
-        padding:10px;
-        margin: 0 20px;
+    #rightCol {         
+        max-width: 100%;
+        width: 95%;
+        margin: 5px 20px;
+        padding: 20px;
     }
     #rightCol h2 { 
         width: 95%; 
-        margin-top: 5px;
+        margin-top: 15px;
     }    
     #rightCol ul {
         width: 100%;
         display: flex;
         flex-direction: row;
-        margin:  0 10px;
     }
     #rightCol ul li { 
+        width: 35%;
         padding: 5px 5px 15px 5px; 
+    }
+    #rightCol ul li:nth-child(3) {
+        margin-right: 0;
     }
     #rightCol ul li img,  #leftCol ul li img { 
         width: 100%; 
@@ -610,23 +611,29 @@ header p {
     #rightCol ul li:nth-child(1) a .stars { 
         padding: 35px 0 0 10px; 
     }    
-    #leftCol {        
-        max-width: 728px;
+    #leftCol {  
+        max-width: 100%;
         padding:10px;
         margin-top: 20px; 
     }
     #leftCol ul li {
+        width: 30%;
         margin: 0 10px 20px 10px;
     }
+    #leftCol ul li a .stars {
+        padding: 20px 0 5px 20px;
+    }
     #blocAct {     
-        margin: 0 10px;
-        max-width: 748px;
+        margin: -10px 20px;
     }
     #contAct { 
         columns: 1; 
     }
+    #blocRight {
+        margin-top: 20px;
+    }
     #mainFooter { 
-        width: 98%;
+        width: 100%;
     }
 
     /* Mozilla Firefox specifications */
@@ -636,30 +643,31 @@ header p {
             right: 20%;
         } 
         #topHeader { 
-            width: 768px;
+            width: 100%;
             margin: 0 20px 0 0;
         }  
+        
+        #rightCol {
+            max-width: 100%;
+            width: 95%;    
+        }                   
+        #rightCol ul li {
+            margin: 0 30px 25px 0; 
+        }
         #rightCol ul li:nth-child(2) a .stars, #rightCol ul li:nth-child(3) a .stars {
-            margin-top: 10px;
+            margin-top: 15px;
+        } 
+        #leftCol {     
+            max-width: 100%;             
         }
         #leftCol h2 { 
             margin-top: 10px;
-        }         
-        #blocRight {
-            margin-top: 20px;
-        }      
-        #mainFooter { 
-            width: 90%;
-        }
+        }   
     }    
 }
 
 /* SMARTPHONE  Portrait */
-@media (orientation:portrait) and (min-width: 320px) and (max-width: 667px) {
-    body {
-        min-width: 375px;
-        max-width: 667px;
-    }
+@media (min-width: 320px) and (max-width: 667px) {
     nav ul {
         position: static;
         margin: 0;
@@ -684,14 +692,14 @@ header p {
         color: var(--blue);
         font-weight: bold;
     }
-    header h1 {
+    #generalContent h1 {
         font-size: 1.3em;
         margin-top: 10px;
         padding: 50px 10px 0 20px;
         font-weight: bold;
     } 
     #ztext input { 
-        width: 230px;
+        width: 220px;
     }
     #btText { 
         display: none; 
@@ -707,15 +715,19 @@ header p {
     #filters ul {
         clear: left;
         margin: 0 20px;
-        padding: 10px 0 0 0;
+        padding-top: 5px;
         display: flex;
         flex-direction:row;
         flex-wrap: wrap;
         align-items: flex-start;
     } 
     #filters ul li { 
-        margin: 0 0 30px 0; 
+        margin: 0 10px 15px 0; 
+        padding-right:5px;
     }    
+    #filters ul li span {
+        font-size: 0.9rem;
+    }
     #info span {
         float: left;
         margin-right: 20px;
@@ -723,13 +735,12 @@ header p {
     #topContent {
         display: flex;
         flex-direction: column-reverse;
-        width:100%;
     }
     #rightCol, #leftCol { 
         margin: 0 20px 20px 20px;
         padding: 0 10px;
-        width: 92%;
-        max-width: 92%;
+        max-width: 100%;
+        width: 90%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -738,12 +749,12 @@ header p {
         margin: 0;  
     }
     #rightCol ul li, #leftCol ul li {
-        width: 99%;
+        width: 100%;
         margin: 0 0 20px 0;
         padding: 0 10px 0 0;
     }
     #rightCol ul li img { 
-        width: 50%;
+        width: 45%;
     }
     #leftCol ul li {
         width: 99%;
@@ -790,110 +801,4 @@ header p {
     #mainFooter h3 { 
         margin-top: 20px;
     }
-}
-
-/* SMARTPHONE Landscape */
-@media (orientation: landscape) and (min-width: 320px) and (max-width: 667px) {
-    body {
-        min-width: 320px;
-        max-width: 668px;
-        padding: 0 10px;
-        margin: 0 auto;
-    }
-    nav ul {
-        width: 35%;
-        right: 25%;
-    }
-    #topHeader { 
-        margin: 0 20px 0 0;
-    }
-    #filters p {
-        width: 100%;
-    }
-    #filters ul {
-        clear: left;
-        margin: 0 20px;
-        padding-top: 5px;
-        display: flex;
-        flex-wrap: wrap;
-    } 
-    #filters ul li { 
-        margin: 0 0 30px 0; 
-    } 
-    #topContent {
-        display: flex;
-        flex-direction: column-reverse;
-    }   
-    #rightCol {
-        width: 95%;
-        margin: 0 10px;
-    }
-    #rightCol ul li img, #leftCol ul li img {
-        width: 100%;
-        border-radius: 20px 20px 0 0;
-        padding: 10px;
-    }
-    #rightCol ul li a span {
-        padding: 0 30px;
-    }
-    #rightCol ul li a .stars {
-        margin: 10px 0;
-    }
-    #leftCol {
-        max-width: 100%;        
-        margin: 20px 10px;
-    }
-    #leftCol ul li {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-    #blocAct {
-        max-width: 100%;
-    }
-    #contAct {
-        columns: 1;
-    }   
-    #blocLeft, #blocRight { 
-        margin-bottom: 220px;
-    }
-    #blocLeft ul, #blocRight ul {
-        display: flex;
-        flex-direction: row;
-    }      
-    #blocLeft ul li, #blocRight ul li { 
-        width: 100%; 
-    }
-    #blocLeft ul li:nth-child(1), #blocRight ul li:nth-child(1) { 
-        margin-right: 0;
-    } 
-    #blocLeft ul li a figure img, #blocRight ul li a figure img {
-        width: 100%;
-        object-fit: cover;
-    }
-    #blocLeft ul li:nth-child(1) a figure img, #blocLeft ul li:nth-child(3) a figure img, #blocRight ul li:nth-child(1) a figure img, #blocRight ul li:nth-child(2) a figure img, #blocRight ul li:nth-child(3) a figure img  { 
-        height: 135px; 
-    }
-    #blocLeft ul li:nth-child(2) a figure img { 
-        height: 150px; 
-    }
-    #blocLeft ul li:nth-child(3) a figure { 
-        margin-top: 0;
-    }
-    #blocRight ul li:nth-child(3) a figure { 
-        margin-top: 0; 
-    }
-    #blocLeft ul li, #blocRight ul li { 
-        margin-bottom: 35px;
-    } 
-    #mainFooter {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        margin-top: 20px;
-    }
-    #mainFooter section {
-        margin-top: 20px;
-    }
-
-   
 }
