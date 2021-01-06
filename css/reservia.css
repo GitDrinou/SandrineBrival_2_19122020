@@ -32,7 +32,7 @@ img {
 #topHeader span {
     display: flex;
     align-self:center;
-    padding: 20px;
+    padding: 35px 20px;
 }
 #topHeader span a {
     text-decoration: none;
@@ -42,20 +42,30 @@ img {
 
 /* Menu */
 nav ul {  
-    width: 18%;  
     float: right;
     display: flex;
     justify-content: space-between;
     position: absolute;
-    right: 15%;
-    top: 36px;   
+    top: 0;       
+    width: 25%;        
+    right: 10%;
 } 
+nav ul li {
+    padding: 30px;
+    width: 50%;
+}
+nav ul li:hover {
+    border-top: 3px solid #0065FC;
+}
 nav ul li a { 
     text-decoration: none; 
 } 
 nav ul li a:hover {
     color: #0065FC;
     font-weight: bold;
+}
+nav ul li:first-child {
+    border-top: #0065FC;
 }
 nav ul li:first-child a {
     color: #0065FC;
@@ -144,7 +154,8 @@ nav ul li:first-child a {
 } 
 #filters ul li span:first-child {
     border-radius: 50%;
-    background-color: #DEEBFF;
+    width: 15px;
+    height: 15px;
     font-size: 1em;
     color: #0065FC;
     padding: 10px 16px;
@@ -166,13 +177,14 @@ nav ul li:first-child a {
     padding: 0 0 20px 20px;
 }
 #info span {
-    width: 25px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
+    padding: 5px 8px;
     color: #0065FC;
-    padding: 10px 15px 10px 15px;
     border: 2px solid #f2f2f2;
     text-align: center;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 /* Content section : Accomodation + Activities */
@@ -218,7 +230,8 @@ nav ul li:first-child a {
     border-radius: 20px;
     padding-bottom: 10px;
     width: 30%;
-    margin: 0 25px 30px 0
+    margin: 0 25px 30px 0;
+    box-shadow: 2px 2px 3px rgba(128, 128, 128, 0.5);
 }
 #leftCol ul li img {
     padding: 5px;
@@ -256,6 +269,9 @@ nav ul li:first-child a {
     font-weight: bold;
     padding: 5px 0 20px 20px; 
 }
+#leftCol p a:visited {
+    color: black;
+}
 
 /* Content section : Most popular accomodations */
 #rightCol {    
@@ -283,7 +299,8 @@ nav ul li:first-child a {
     width: 100%;
     margin: 0 25px 20px 0;
     background-color: #FFFFFF;
-    border-radius: 20px;
+    border-radius: 20px;    
+    box-shadow: 2px 2px 3px rgba(128, 128, 128, 0.5);
 }
 #rightCol ul li img {
     padding: 5px;
@@ -343,6 +360,7 @@ nav ul li:first-child a {
 }
 #blocLeft ul li, #blocRight ul li { 
     width: 47%; 
+    border-radius: 0; 
 }
 #blocLeft ul li:nth-child(1), #blocRight ul li:nth-child(1) { 
     margin-right: 30px;
@@ -381,7 +399,8 @@ nav ul li:first-child a {
 #blocLeft ul li a figure img, #blocRight ul li a figure img {
     border-radius: 20px 20px 0 0;
     width: 100%;
-    object-fit: cover; 
+    object-fit: cover;        
+    box-shadow: 2px 2px 3px rgba(128, 128, 128, 0.5);
 }
 #blocLeft ul li:nth-child(1) a figure img, #blocRight ul li:nth-child(1) a figure img {       
     height: 375px; 
@@ -403,12 +422,14 @@ nav ul li:first-child a {
     width: 100%;
     padding: 10px 0 10px 20px;
     background-color: #FFFFFF;    
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 0 20px 20px;       
+    box-shadow: 2px 2px 3px rgba(128, 128, 128, 0.5);
 }
 
 
 /* Footer section */
 #mainFooter {
+    width: 100%;
     margin: 60px 0 30px 0;
     display: flex;
     flex-direction: row;
@@ -432,33 +453,53 @@ nav ul li:first-child a {
     color: #000000; 
 }
 
-
-/* TABLETS Landscape */
-@media (orientation:landscape) and (min-width: 668px) and (max-width: 1024px) {  
-    nav ul {  
-        width: 25%;  
-        right: 20%; 
+/* TABLETS */
+@media (min-width: 667px) and (max-width: 1024px) {  
+    nav ul {          
+        width: 30%;
+        right: 22%; 
     } 
     #topHeader,  #blocAct { 
-        margin: 0 20px 0 0; 
+        width: 100%;
+        margin: 0 20px 0 0;       
     } 
     #topContent {
         display: flex;
         flex-direction: column-reverse;
     }
-    #leftCol { 
-        max-width: 100%; 
-        margin-top: 30px;   
+    #filters {
+        width: 100%;
     }
-    #leftCol ul li { 
-        margin: 0 25px 25px 0; 
-    }    
-    #rightCol { 
-        margin: 10px 0 20px 20px;
-        width: 96%; 
+    #filters ul {
+        margin: 0 20px 0 10px;
+        padding-top: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #filters p {
+        width: 100%;
+    }
+    #topContent {
+        width: 100%;
+        padding: 0 20px;
+    }
+    #rightCol, #leftCol { 
+        margin: 20px 0 0 0;
+        max-width: 100%;
+        width: 100%; 
         display: flex;
         flex-direction: row;
         flex-wrap: wrap; 
+        padding: 0 20px;
+    }
+    #leftCol ul {
+        width: 100%;
+    }
+    #leftCol ul li {
+        width: 47%;
+    } 
+    #leftCol ul li:nth-child(even) { 
+        margin-right: 0; 
     }
     #rightCol h2 {
         width: 100%;
@@ -466,11 +507,12 @@ nav ul li:first-child a {
     #rightCol ul {
         margin: 0;
         display: flex;
-        flex-direction: row;   
+        flex-direction: row;  
+        width: 100%;
     }
-    #rightCol ul li {
-        margin: 0 25px 25px 0; 
-    }
+    #rightCol ul li, #leftCol ul li {
+        margin: 0 35px 20px 0;  
+    }  
     #rightCol ul li:nth-child(3) { 
         margin-right: 0; 
     }
@@ -486,15 +528,17 @@ nav ul li:first-child a {
         padding-left: 10px;
     }
     #rightCol ul li a .stars { 
-        padding: 20px 0 0 10px; 
-    }    
-    #rightCol ul li:nth-child(1) a .stars, #rightCol ul li:nth-child(3) a .stars { 
-        padding: 35px 0 0 10px; 
+        padding: 10px 0 10px 10px; 
+    } 
+    #blocAct {
+        margin-top: 25px;
     }
     #contAct { 
-        column-gap: 10px; 
         column-count: 1;  
     }   
+    #blocLeft {
+        margin-bottom: 20px;
+    }
     #blocLeft ul li a figure figcaption, #blocRight ul li a figure figcaption { 
         font-size: 0.95rem;
     }  
@@ -505,157 +549,14 @@ nav ul li:first-child a {
         height: 150px; 
     }
 
-    /* Mozilla Firefox specifications */
-    @supports (-moz-appearance:none) {
-        nav ul {  
-            width: 23%;  
-            right: 17%;
-        } 
-        #topHeader { 
-            width: 100%;
-            margin: 0 20px 0 0;
-        }
-        #rightCol h2 { 
-            width: 100%; 
-        }
-        #rightCol ul { 
-            width: 100%;
-        }
-        #rightCol ul li:nth-child(2) a .stars { 
-            padding: 37px 0 0 10px; 
-        }
-        #blocLeft { 
-            margin-bottom: 42px;
-        }
-        #blocLeft ul li:nth-child(3) a figure { 
-            margin-top: 80px;
-        }
-        #blocRight ul li:nth-child(3) a figure { 
-            margin-top: 45px;
-        }
-    }    
 }
 
-/* TABLETS Portrait */
-@media (orientation: portrait) and (min-width:668px) and (max-width: 1024px) {
-    nav ul { 
-        width: 30%;
-        right: 25%;
-    }    
-    #topHeader { 
-        width:100%;
-        padding-right: 20px;
-    } 
-    #filters p { 
-        width:100%;
-        margin: 0 20px 0 0;
-        padding-bottom:0;
-    }
-    #filters ul {
-        margin-bottom: 10px;
-        display: flex;
-        flex-wrap: wrap;
-    }
-    #filters ul li { 
-        margin-right: 10px; 
-    }
-    #topContent { 
-        display: flex;
-        flex-direction: column-reverse;
-    }
-    #rightCol {         
-        max-width: 100%;
-        width: 95%;
-        margin: 5px 20px;
-        padding: 20px;
-    }
-    #rightCol h2 { 
-        width: 95%; 
-        margin-top: 15px;
-    }    
-    #rightCol ul {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-    }
-    #rightCol ul li { 
-        width: 35%;
-        padding: 5px 5px 15px 5px; 
-    }
-    #rightCol ul li:nth-child(3) {
-        margin-right: 0;
-    }
-    #rightCol ul li img,  #leftCol ul li img { 
-        width: 100%; 
-        border-radius: 20px 20px 0 0;
-        padding-bottom: 10px;
-    }
-    #rightCol ul li a .accomName { 
-        padding: 0 10px;
-    }
-    #rightCol ul li a .amount { 
-        padding-left: 10px;
-    }
-    #rightCol ul li a .stars { 
-        padding: 20px 0 0 10px; 
-    }
-    #rightCol ul li:nth-child(1) a .stars { 
-        padding: 35px 0 0 10px; 
-    }    
-    #leftCol {  
-        max-width: 100%;
-        padding:10px;
-        margin-top: 20px; 
-    }
-    #leftCol ul li {
-        width: 30%;
-        margin: 0 10px 20px 10px;
-    }
-    #blocAct {     
-        margin: -10px 20px;
-    }
-    #contAct { 
-        columns: 1; 
-    }
-    #blocRight {
-        margin-top: 20px;
-    }
-    #mainFooter { 
-        width: 100%;
-    }
-
-    /* Mozilla Firefox specifications */
-    @supports (-moz-appearance:none) {
-        nav ul {  
-            width: 32%;  
-            right: 20%;
-        } 
-        #topHeader { 
-            width: 100%;
-            margin: 0 20px 0 0;
-        }  
-        
-        #rightCol {
-            max-width: 100%;
-            width: 95%;    
-        }                   
-        #rightCol ul li {
-            margin: 0 30px 25px 0; 
-        }
-        #rightCol ul li:nth-child(2) a .stars, #rightCol ul li:nth-child(3) a .stars {
-            margin-top: 15px;
-        } 
-        #leftCol {     
-            max-width: 100%;             
-        }
-        #leftCol h2 { 
-            margin-top: 10px;
-        }   
-    }    
-}
 
 /* SMARTPHONE */
-@media (min-width: 320px) and (max-width: 667px) {
+@media (min-width: 375px) and (max-width: 667px) {
+    #topHeader span {
+        padding-right: 20px;
+    }
     nav ul {
         position: static;
         margin: 0;
@@ -667,7 +568,7 @@ nav ul li:first-child a {
         padding: 10px 0;
     }
     nav ul li:hover {
-        border-bottom: 2px solid #0065FC;
+        border-bottom: 3px solid #0065FC;
         font-weight: bold;
         color: #0065FC;
     } 
@@ -680,14 +581,24 @@ nav ul li:first-child a {
         color: #0065FC;
         font-weight: bold;
     }
+    #generalContent {        
+        margin: 10px 20px;
+    }
+    #generalContent p {
+        margin: 0;
+        padding: 10px 0;
+    }
     #generalContent h1 {
         font-size: 1.3em;
-        margin-top: 10px;
-        padding: 50px 10px 0 20px;
-        font-weight: bold;
+        padding: 50px 10px 0 0;
+        font-weight: bold;   
     } 
+    #search {
+        margin: 0;
+        padding: 0;      
+    }
     #ztext input { 
-        width: 220px;
+        width: 235px;     
     }
     #btText { 
         display: none; 
@@ -701,18 +612,14 @@ nav ul li:first-child a {
         border-radius: 10px;
     }
     #filters ul {
-        width: 100%;
-        clear: left;
-        margin: 0 20px;
-        padding-top: 5px;
+        width: 100%;       
+        padding: 5px 0;
         display: flex;
         flex-direction:row;
         flex-wrap: wrap;
-        align-items: flex-start;
     } 
     #filters ul li { 
-        margin: 0 8px 10px 0; 
-        padding-right:5px;
+        margin: 0 12px 10px 0; 
     }    
     #filters ul li span {
         font-size: 0.9rem;
@@ -749,7 +656,7 @@ nav ul li:first-child a {
         width: 99%;
         margin: 0 0 20px 0;
         padding: 0 0 10px 0;
-    }    
+    }  
     #contAct {
        columns: 1;
     }    
@@ -782,7 +689,7 @@ nav ul li:first-child a {
         margin-bottom: 35px;
     } 
     #mainFooter { 
-        margin: 25px 20px;
+        /*margin: 25px 20px;*/
         display: flex;
         flex-direction: column;
         justify-content: space-around;
