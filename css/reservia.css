@@ -463,6 +463,20 @@ nav ul li:first-child a {
     color: #000000; 
 }
 
+/* DESKTOP Mozilla */
+@media (min-width: 1025px) {
+    @supports (-moz-appearance:none) {
+        #rightCol{
+            width: 35%;
+            margin-left: 35px;
+        }
+        #leftCol ul li {
+            width: 40%;
+            min-width: 15%;
+        } 
+    }   
+}
+
 /* TABLETS */
 @media (min-width: 667px) and (max-width: 1024px) {  
     nav ul {          
@@ -563,7 +577,6 @@ nav ul li:first-child a {
     #blocRight ul li:nth-child(3) img { 
         height: 150px; 
     }
-
 }
 
 
@@ -670,6 +683,7 @@ nav ul li:first-child a {
     }
     #rightCol ul li img { 
         width: 45%;
+        height: 133px;
     }
     #leftCol {         
         margin: 0 30px 20px 0;
@@ -729,4 +743,14 @@ nav ul li:first-child a {
     #mainFooter h3 { 
         margin-top: 20px;
     }
+
+    @supports (-moz-appearance:none) {       
+        #rightCol, #leftCol { 
+            padding: 0 10px;
+            width: 90%;
+        }           
+        #rightCol ul li, #leftCol ul li{
+            width: 100%;
+        }
+    }   
 }
