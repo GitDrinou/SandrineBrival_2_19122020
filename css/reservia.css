@@ -152,13 +152,16 @@ nav ul li:first-child a {
     padding: 10px;
 } 
 #filters ul li span:first-child {
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    width: 15px;
-    height: 15px;
-    font-size: 1em;
+    font-size: 0.9rem;
     color: #0065FC;
-    padding: 10px 16px;
+    padding: 10px 12px;
     margin-left: -2px;
+}
+#filters ul li:nth-child(2) span:first-child {
+    padding: 10px 14px;
 }
 #filters ul li a {
     text-decoration: none;
@@ -179,11 +182,12 @@ nav ul li:first-child a {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    padding: 5px 8px;
+    padding: 5px 10px;
     color: #0065FC;
     border: 2px solid #f2f2f2;
     text-align: center;
     margin-right: 10px;
+    font-size: 0.8rem;
 }
 
 /* Content section : Accomodation + Activities */
@@ -207,6 +211,9 @@ nav ul li:first-child a {
 }
 .starsOff {
     color: #DEEBFF;
+}
+.bold {
+    font-weight: bold;
 }
 
 /* Content section : Accomodations */
@@ -598,6 +605,7 @@ nav ul li:first-child a {
         padding: 10px 0;
     }
     nav ul li:hover {
+        border-top: 3px solid white;
         border-bottom: 3px solid #0065FC;
         font-weight: bold;
         color: #0065FC;
@@ -656,8 +664,15 @@ nav ul li:first-child a {
         font-size: 0.9rem;
     }
     #info span {
+        height: 25px;
+        width: 25px;
         float: left;
         margin-right: 20px;
+        padding: 3px 12px 5px 7px;
+        text-align: center;
+        font-size: 0.8rem;
+        
+    border: 2px solid #f2f2f2;
     }    
     #topContent {
         display: flex;
